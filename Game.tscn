@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
-[ext_resource path="res://Resources/Mobile - DoDonPachi Unlimited - Type C.png" type="Texture" id=2]
+[ext_resource path="res://Missile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Mobile - DoDonPachi Unlimited - Type C.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.4, 10 )
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
@@ -31,6 +32,7 @@ __meta__ = {
 "_edit_group_": true
 }
 Speed = 400
+Missile = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="0"]
 
@@ -40,7 +42,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Player" index="1"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 360, 702, 54, 66 )
 region_filter_clip = true

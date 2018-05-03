@@ -8,6 +8,9 @@ public class Player : Area2D
 	[Export]
 	public int Speed = 0;
 
+    [Export]
+    public PackedScene Missile;
+
     public override void _Ready()
     {
 		screenSize = GetViewport().GetSize();
@@ -22,37 +25,15 @@ public class Player : Area2D
             Position -= new Vector2(Speed * delta, 0);
         }
 
+        if (Input.IsActionJustPressed("action_fire")) {
+            var missile =  (Area2D) Missile.Instance();
+            missile.Position = Position;
+            GetParent().AddChild(missile);
+        }
+
         Position = new Vector2(
             Mathf.Clamp(Position.x, 0, screenSize.x),
             Position.y
         );
     }
 }
-
-//public override void _Process(float delta)
-//{
-//    var velocity = new Vector2();
-//    if (Input.IsActionPressed("ui_right")) {
-//        velocity.x += 1;
-//    }
-//
-//    if (Input.IsActionPressed("ui_left")) {
-//        velocity.x -= 1;
-//    }
-//
-//    if (Input.IsActionPressed("ui_down")) {
-//        velocity.y += 1;
-//    }
-//
-//    if (Input.IsActionPressed("ui_up")) {
-//        velocity.y -= 1;
-//    }
-//
-//    var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
-//    if (velocity.Length() > 0) {
-//        velocity = velocity.Normalized() * Speed;
-//        animatedSprite.Play();
-//    } else {
-//        animatedSprite.Stop();
-//    }
-//}
