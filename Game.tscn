@@ -10,9 +10,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10.4, 10 )
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -52,5 +52,6 @@ _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 [node name="Enemy" parent="." index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 527.257, 173.729 )
+Missile = null
 
 
