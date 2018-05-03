@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
 [ext_resource path="res://Missile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Mobile - DoDonPachi Unlimited - Type C.png" type="Texture" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -47,5 +48,9 @@ region_enabled = true
 region_rect = Rect2( 360, 702, 54, 66 )
 region_filter_clip = true
 _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="Enemy" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 527.257, 173.729 )
 
 

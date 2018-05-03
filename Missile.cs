@@ -14,7 +14,6 @@ public class Missile : Area2D
     {
         Position -= new Vector2(0, 400 * delta);
 
-        GD.Print(Position.ToString());
         if (Position.y < -10) {
             QueueFree();
         }

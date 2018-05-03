@@ -12,7 +12,6 @@ config_version=3
 
 config/name="Space Invaders"
 run/main_scene="res://Game.tscn"
-config/icon="res://icon.png"
 
 [input]
 
