@@ -35,4 +35,6 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[connection signal="area_entered" from="." to="." method="_on_Missile_area_entered"]
+
 

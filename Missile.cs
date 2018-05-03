@@ -19,4 +19,12 @@ public class Missile : Area2D
         }
     }
 
+    private void _on_Missile_area_entered(Area2D area)
+    {
+        if (area.IsInGroup("Enemy"))
+        {
+            area.QueueFree();
+            QueueFree();
+        }
+    }
 }

@@ -1,23 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
 [ext_resource path="res://Missile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Mobile - DoDonPachi Unlimited - Type C.png" type="Texture" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://EnemyMissile.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.4, 10 )
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 _sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" type="Area2D" parent="." index="0"]
+[node name="Player" type="Area2D" parent="." index="0" groups=[
+"Player",
+]]
 
 position = Vector2( 551.818, 506.551 )
 input_pickable = true
@@ -52,6 +55,6 @@ _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 [node name="Enemy" parent="." index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 527.257, 173.729 )
-Missile = null
+Missile = ExtResource( 5 )
 
 
